@@ -1,4 +1,5 @@
 import speedtest
+import pymongo
 
 servers = []
 # If you want to test against a specific server
@@ -16,4 +17,8 @@ s.results.share()
 
 results_dict = s.results.dict()
 
-results_dict;
+conn = pymongo.MongoClient("mongodb://192.168.1.134:27017/")
+mydb = conn["db_speedtest"]
+mycol = mydb["results"]
+
+x = mycol.insert_one(results_dict)
