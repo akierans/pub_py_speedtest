@@ -46,14 +46,14 @@ mycol = mydb["results"]
 x = mycol.insert_one(results_dict)
 
 #MySQL Connection and Insert
-cnx = mysql.connector.connect(user='speedtest', password=f"{mysqlpw}", host='127.0.0.1', database='speedtest')
+cnx = mysql.connector.connect(user='ubuntu', password=f"{mysqlpw}", host='127.0.0.1', database='speedtest')
 cursor = cnx.cursor()
 
 add_speedtest = ("INSERT INTO results "
 	"(client, server, bytes_received, bytes_sent, downoad, upload, ping, share, timestamp)"
 	"VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)")
 
-now = datetime.datetime.now()
+now = datetime.now()
 formatted_date = now.strftime('%Y-%m-%d %H:%M:%S')
 
 client = r.get('client')
