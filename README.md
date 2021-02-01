@@ -18,6 +18,9 @@ mysql-pw="PASSWORD-HERE"
 ## MySQL Schema
 Schema - speedtest
 Table - results
+
+The script assumes you have created a user with write privelages to the MySQL Schema called 'speedtest'
+
 Col Name | Type
 ---------|-------
 idspeedtest | int
