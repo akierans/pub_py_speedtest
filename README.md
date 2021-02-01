@@ -9,11 +9,14 @@
 ## Installation & Running
 * Clone Repo
 * Create .env file requires:
-`mongo-pw="PASSWORD-HERE"`
-`mysql-pw="PASSWORD-HERE"`
+```
+mongo-pw="PASSWORD-HERE"
+mysql-pw="PASSWORD-HERE"
+```
 
 
-## MySQL Schema - speedtest
+## MySQL Schema
+Schema - speedtest
 Table - results
 Col Name | Type
 ---------|-------
@@ -23,7 +26,7 @@ server | json
 bytes_received | double
 bytes_sent | double
 download | double
-upload - double
+upload | double
 ping | double
 share | varchar(150)
 timestamp | datetime
