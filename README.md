@@ -4,7 +4,9 @@
 * Up to date Python3 environment
 * Install and setup local MySQL - schema to follow
 * Install Speedtest CLI
-`pip install speedtest-cli`
+`pip install speedtest-cli` 
+* Install Dotenv for reading environment variables
+`pip install python-dotenv`
 * Install Python MySQL
 `pip install mysql-connector-python`
 
