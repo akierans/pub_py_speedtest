@@ -5,6 +5,8 @@
 * Install and setup local MySQL - schema to follow
 * Install Speedtest CLI
 `pip install speedtest-cli`
+* Install Dotenv for reading environment variables
+`pip install python-dotenv`
 
 ## Installation & Running
 * Clone Repo
