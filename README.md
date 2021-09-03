@@ -4,15 +4,16 @@
 * Up to date Python3 environment
 * Install and setup local MySQL - schema to follow
 * Install Speedtest CLI
-`pip install speedtest-cli`
+`pip install speedtest-cli` 
 * Install Dotenv for reading environment variables
 `pip install python-dotenv`
+* Install Python MySQL
+`pip install mysql-connector-python`
 
 ## Installation & Running
 * Clone Repo
 * Create .env file requires:
 ```
-mongo-pw="PASSWORD-HERE"
 mysql-pw="PASSWORD-HERE"
 ```
 
@@ -21,7 +22,7 @@ mysql-pw="PASSWORD-HERE"
 Schema - speedtest
 Table - results
 
-The script assumes you have created a user with write privelages to the MySQL Schema called 'speedtest'
+The script assumes you have created a user named 'speedtest' with write privelages to the MySQL Schema called 'speedtest'
 
 Col Name | Type
 ---------|-------
