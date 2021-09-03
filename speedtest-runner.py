@@ -1,5 +1,4 @@
 import speedtest
-from pymongo import MongoClient
 from dotenv import load_dotenv
 load_dotenv()
 import os
@@ -7,10 +6,8 @@ import mysql.connector
 from datetime import date, datetime, timedelta
 import json
 
-#mongo-pw is the .env variable
-pw = os.environ.get("mongo-pw")
+#mysql-pw is the .env variable
 mysqlpw = os.environ.get("mysql-pw")
-#import urllib.parse
 
 servers = []
 # If you want to test against a specific server
@@ -20,30 +17,15 @@ threads = None
 # If you want to use a single threaded test
 # threads = 1
 
+#Which speedtests to run
 s = speedtest.Speedtest()
-
 s.download(threads=threads)
-
 s.upload(threads=threads)
-
 s.results.share()
 
+#Store results in a dictionary
 results_dict = s.results.dict()
-
 r = results_dict
-
-#MongoDB Connection
-#username = urllib.parse.quote_plus('admin')
-#password = urllib.parse.quote_plus('removed!')
-#conn = MongoClient('mongodb://%s%s@192.168.1.137' % (username, password))
-
-uri = f"mongodb://admin:{pw}@localhost/admin"
-client = MongoClient(uri)
-
-mydb = client["db_speedtest"]
-mycol = mydb["results"]
-
-x = mycol.insert_one(results_dict)
 
 #MySQL Connection and Insert
 cnx = mysql.connector.connect(user='speedtest', password=f"{mysqlpw}", host='127.0.0.1', database='speedtest')
